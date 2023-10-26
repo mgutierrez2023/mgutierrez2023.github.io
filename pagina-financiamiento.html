@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>En Busca De La Igualdad</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        #header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+        }
+        #content {
+            margin: 20px;
+        }
+        h2 {
+            color: #3498db;
+        }
+        #logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px;
+        }
+        #showTeam, #financingMethods {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        #showTeam a, #financingMethods a {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        #showTeam a:hover, #financingMethods a:hover {
+            background-color: #2779b6;
+        }
+        #financingMethods {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+        }
+        .person-container {
+            display: none;
+            text-align: center;
+        }
+        .person {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+        }
+        .person img {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+        .financing-method-container {
+            display: none; /* Ocultar los métodos de financiamiento por defecto */
+        }
+        .financing-method-container.active {
+            display: block; /* Mostrar métodos de financiamiento cuando está activo */
+        }
+        .financing-method {
+            text-align: left;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="logo.png" alt="Logo de Igualdad en Acción">
+    <div id="header">
+        <h1>En Busca De La Igualdad</h1>
+        <p>Abordando la desigualdad económica</p>
+    </div>
+    <div id="content">
+        <h2>Comprende la Desigualdad Económica</h2>
+        <div id="infoText">
+            <p>"La desigualdad económica refleja disparidades en la distribución de la riqueza y oportunidades económicas."</p>
+        </div>
+        <button id="action1" onclick="toggleMoreInfo()">Leer más</button>
+    </div>
+    <button id="showTeam" onclick="toggleTeamSection()">Quiénes Somos</button>
+    <button id="financingMethods" onclick="toggleFinancingMethods()">Métodos de Financiamiento</button>
+    <div class="person-container">
+        <div class="person">
+            <img src="foto1.png" alt="Matias Gutierrez">
+            <h3>Matias Gutierrez</h3>
+            <p>Estudiante de Ing. Civil informática.</p>
+        </div>
+        <div class="person">
+            <img src="foto2.png" alt="Jorge Fernández">
+            <h3>Jorge Fernández</h3>
+            <p>Estudiante de Ing. Civil informática.</p>
+        </div>
+        <div class="person">
+            <img src="foto3.png" alt="Monica Lobos">
+            <h3>Mónica Lobos</h3>
+            <p>Estudiante de Ing Comercial.</p>
+        </div>
+    </div>
+    <div id="moreInfoContainer">
+        <p>La desigualdad económica es un problema global que afecta a millones de personas en todo el mundo. Algunos datos clave sobre este tema incluyen:</p>
+        <ul>
+            <li>A nivel mundial, la pobreza disminuyó del 36 % en 1990 al 10 % en 2015, pero la COVID-19 amenaza con revertir este progreso y aumentar la pobreza en 500 millones de personas, un 8 % de la población mundial, por primera vez en 30 años.</li>
+            <li>Más de 700 millones de personas, el 10 % de la población mundial, vive en extrema pobreza, luchando por satisfacer necesidades básicas como salud y educación. La mayoría de los afectados residen en África subsahariana, y las áreas rurales tienen tasas de pobreza más altas que las áreas urbanas.</li>
+            <li>El 8 % de los trabajadores en todo el mundo y sus familias vivían en extrema pobreza en 2018. Uno de cada cinco niños vive en esta situación, subrayando la importancia de la protección social para reducir la pobreza.</li>
+        </ul>
+        <p>Para abordar la desigualdad económica, es fundamental considerar soluciones y acciones que promuevan la equidad y la sostenibilidad económica:</p>
+        <ul>
+            <li><strong>Emprendimiento sostenible:</strong> Iniciar negocios rentables con un impacto positivo en el medio ambiente y la sociedad, como la producción de alimentos orgánicos y energía renovable.</li>
+            <li><strong>Educación financiera:</strong> Ofrecer programas en línea o talleres locales para empoderar a las personas con conocimientos financieros que les permitan tomar decisiones económicas informadas.</li>
+            <li><strong>Comercio justo:</strong> Promover la venta de productos de comercio justo, garantizando salarios justos y condiciones de trabajo dignas para los productores en países en desarrollo.</li>
+            <li><strong>Educación en línea:</strong> Ofrecer cursos en línea sobre diversos temas para brindar acceso a la educación de calidad en todo el mundo.</li>
+        </ul>
+        <p>El emprendimiento sostenible y la promoción de la equidad económica son esenciales para abordar la desigualdad y construir un mundo más justo y equitativo.</p>
+        <p>Obtén más información sobre la desigualdad económica en el <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/">Desarrollo sostenible</a>.</p>
+    </div>
+    <div class="financing-method-container">
+        <div class="financing-method">
+            <strong><a href="https://aiesec.org/search">AIESEC:</a></strong>
+            <p>Es una organización internacional de jóvenes que ofrece oportunidades de liderazgo y desarrollo personal. Puedes buscar becas, subvenciones o programas de financiamiento que ofrezca AIESEC para apoyar proyectos relacionados con la igualdad económica.</p>
+        </div>
+        <div class="financing-method">
+            <strong><a href="http://www.indap.gob.cl">INDAP:</a></strong>
+            <p>El Instituto de Desarrollo Agropecuario (INDAP) puede proporcionar financiamiento a proyectos agrícolas y rurales. Si estás trabajando en iniciativas que aborden la igualdad económica en áreas rurales, INDAP puede ser una fuente de apoyo financiero.</p>
+        </div>
+    </div>
+    <script>
+        let infoVisible = false;
+        let teamVisible = false;
+
+        function toggleMoreInfo() {
+            const moreInfoContainer = document.getElementById('moreInfoContainer');
+            infoVisible = !infoVisible;
+            if (infoVisible) {
+                moreInfoContainer.style.display = 'block';
+                document.getElementById('action1').textContent = 'Mostrar menos';
+            } else {
+                moreInfoContainer.style.display = 'none';
+                document.getElementById('action1').textContent = 'Leer más';
+            }
+        }
+
+        function toggleTeamSection() {
+            const teamSection = document.querySelector('.person-container');
+            teamVisible = !teamVisible;
+            teamSection.style.display = teamVisible ? 'block' : 'none';
+            const infoText = document.getElementById('infoText');
+            infoText.style.display = teamVisible ? 'none' : 'block';
+            const action1 = document.getElementById('action1');
+            action1.style.display = teamVisible ? 'none' : 'block';
+            const contentTitle = document.querySelector('#content h2');
+
+            if (teamVisible) {
+                contentTitle.textContent = "Quiénes Somos";
+                document.getElementById('showTeam').textContent = "Regresar";
+            } else {
+                contentTitle.textContent = "Comprende la Desigualdad Económica";
+                document.getElementById('showTeam').textContent = "Quiénes Somos";
+            }
+        }
+
+        function toggleFinancingMethods() {
+            const financingMethods = document.querySelector('.financing-method-container');
+            financingMethods.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
